@@ -6,4 +6,7 @@ function Admin(name, password, role) {
     this.role = role;
 }
 
+Admin.prototype = Object.create(User.prototype);
+Admin.prototype.constructor = Admin;
+
 module.exports = Admin;
