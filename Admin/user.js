@@ -8,13 +8,18 @@ function User(name, password, role) {
 }
 
 User.prototype.createAccount = function(id) {
+    id = autoincrement(id, db.Admin);
+    let userId = id;
     if(this.role === "admin") {
-        id = autoincrement(id, db.Admin);
-        db.Admin.push({id : id, name : this.name, password : this.password, role : this.role});
-        response = "Your account has been successfully created";
+        db.Admin.push({id : userId, name : this.name, password : this.password, isAdmin : true});
+        response = "Your admin account has been successfully created";
+        return db.Admin;
     }
-    console.log(response);
-    return db.Admin;
+    else {
+        db.Voters.push({id : userId, name : this.name, password : this.password, isAdmin : false});
+        response = "Your user account has been successfully created";
+        return db.Voters;
+    }
 };
 
 module.exports = User;
