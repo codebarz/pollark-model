@@ -12,9 +12,8 @@ Admin.prototype.constructor = Admin;
 
 Admin.prototype.createEvent = function(name, voteAmount, ...contestants) {
     let id = autoincrement(1, db.Events);
-    (voteAmount ? db.Events.push({id : id, name : name, voteAmount : voteAmount, contestants : contestants})
-        : console.log("Vote amount must be an integer"));
-
+    (voteAmount && name && contestants? db.Events.push({id : id, name : name, voteAmount : voteAmount, contestants : contestants})
+        : console.log("Kindly fill in all details"));
     console.log(db.Events);
 };
 
