@@ -9,8 +9,6 @@ describe("External functions", () => {
         expect(autoincrement(1, [])).toEqual(1);
     });
 });
-
-
 describe("Should check all user functionality", () => {
     test("Should check if new instances of User can be created", () => {
         expect(newUser).toEqual( { name: 'oke', password: '123' });
