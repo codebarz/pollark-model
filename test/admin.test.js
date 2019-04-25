@@ -10,8 +10,8 @@ describe("Create Account", () => {
         expect(newAdmin.createAccount()).toEqual({ id: 1, name: 'mike', password: '123', isAdmin: true });
     });
     test("Should check if admin can create event", () => {
-        expect(newAdmin.createEvent("Fashion", 100, "tolu", "mike"))
-            .toEqual({ id: 1, name: 'Fashion', voteAmount: 100, contestants: [ 'tolu', 'mike' ] })
+        expect(newAdmin.createEvent("Fashion", "tolu", "mike"))
+            .toEqual({ id: 1, name: 'Fashion', contestants: [ 'tolu', 'mike' ], currentVotes: [0, 0] })
     });
     test("Should check if admin can delete events", () => {
         expect(newAdmin.deleteEvent("Fashion")).toBe("Event successfully deleted");
