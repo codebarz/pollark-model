@@ -10,13 +10,15 @@ function Admin(name, password, role) {
 Admin.prototype = Object.create(User.prototype);
 Admin.prototype.constructor = Admin;
 
-Admin.prototype.createEvent = function(name, voteAmount, ...contestants) {
+Admin.prototype.createEvent = function(name, ...contestants) {
     let id = autoincrement(1, db.Events);
-    (voteAmount && name && contestants ?
-        db.Events.push({id : id, name : name, voteAmount : voteAmount, contestants : contestants})
+    let currentVotes = [];
+    for(let i = 0; i < contestants.length; i++) { currentVotes.push(0); }
+    (name && contestants ?
+        db.Events.push({id : id, name : name, contestants : contestants, currentVotes : currentVotes})
         : console.log("Kindly fill in all details"));
     console.log("Event successfully created");
-    return {id : id, name : name, voteAmount : voteAmount, contestants : contestants};
+    return {id : id, name : name, contestants : contestants, currentVotes : currentVotes};
 };
 Admin.prototype.deleteEvent = function(eventName) {
     let indexOfEvent = db.Events.findIndex(value => value.name === eventName );
