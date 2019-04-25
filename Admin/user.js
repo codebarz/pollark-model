@@ -19,5 +19,8 @@ User.prototype.createAccount = function(id) {
     response = "Your user account has been successfully created";
     return db.Voters;
 };
+User.prototype.searchEvent = function(event) {
+    return db.Events.filter(value => value.name === event);
+};
 
 module.exports = User;

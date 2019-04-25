@@ -15,7 +15,14 @@ Admin.prototype.createEvent = function(name, voteAmount, ...contestants) {
     (voteAmount && name && contestants ?
         db.Events.push({id : id, name : name, voteAmount : voteAmount, contestants : contestants})
         : console.log("Kindly fill in all details"));
+    console.log("Event successfully created");
+    return {id : id, name : name, voteAmount : voteAmount, contestants : contestants};
+};
+Admin.prototype.deleteEvent = function(eventName) {
+    let indexOfEvent = db.Events.findIndex(value => value.name === eventName );
+    db.Events.splice(indexOfEvent, 1);
     console.log(db.Events);
+    return "Event successfully deleted";
 };
 
 module.exports = Admin;
