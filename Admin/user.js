@@ -13,7 +13,7 @@ User.prototype.createAccount = function(id) {
     if(this.role === "admin") {
         db.Admin.push({id : userId, name : this.name, password : this.password, isAdmin : true});
         response = "Your admin account has been successfully created";
-        return db.Admin;
+        return {id : userId, name : this.name, password : this.password, isAdmin : true};
     }
     db.Voters.push({id : userId, name : this.name, password : this.password, isAdmin : false});
     response = "Your user account has been successfully created";
