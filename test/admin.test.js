@@ -13,4 +13,7 @@ describe("Create Account", () => {
         expect(newAdmin.createEvent("Fashion", 100, "tolu", "mike"))
             .toEqual({ id: 1, name: 'Fashion', voteAmount: 100, contestants: [ 'tolu', 'mike' ] })
     });
+    test("Should check if admin can delete events", () => {
+        expect(newAdmin.deleteEvent("Fashion")).toBe("Event successfully deleted");
+    })
 });
