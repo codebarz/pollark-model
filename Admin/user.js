@@ -17,7 +17,7 @@ User.prototype.createAccount = function(id) {
     }
     db.Voters.push({id : userId, name : this.name, password : this.password, isAdmin : false});
     response = "Your user account has been successfully created";
-    return db.Voters;
+    return {id : userId, name : this.name, password : this.password, isAdmin : false};
 };
 User.prototype.searchEvent = function(event) {
     return db.Events.filter(value => value.name === event);
