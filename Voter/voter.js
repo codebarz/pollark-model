@@ -9,6 +9,8 @@ function Voter(name, password, role) {
 Voter.prototype = Object.create(User.prototype);
 Voter.prototype.constructor = Voter;
 
-let newVoter = new Voter("tega", "123", "voter");
-console.log(newVoter.createAccount());
+Voter.prototype.vote = function(eventName, contestant, voteAmount) {
+    db.Events.forEach(value => value === "Fashion");
+};
 
+module.exports = Voter;
