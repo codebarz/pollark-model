@@ -15,7 +15,7 @@ Admin.prototype.createEvent = function(name, voteAmount, ...contestants) {
     (voteAmount && name && contestants ?
         db.Events.push({id : id, name : name, voteAmount : voteAmount, contestants : contestants})
         : console.log("Kindly fill in all details"));
-    console.log(db.Events);
+    console.log("Event successfully created");
+    return {id : id, name : name, voteAmount : voteAmount, contestants : contestants};
 };
-
 module.exports = Admin;
