@@ -27,5 +27,4 @@ Admin.prototype.deleteEvent = function(eventName) {
     return "Event successfully deleted";
 };
 
-
 module.exports = Admin;
