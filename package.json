@@ -1,0 +1,23 @@
+{
+  "name": "pollark-model",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whitehox/pollark-model.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/whitehox/pollark-model/issues"
+  },
+  "homepage": "https://github.com/whitehox/pollark-model#readme",
+  "devDependencies": {
+    "jest": "^24.7.1"
+  }
+}
