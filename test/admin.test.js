@@ -1,7 +1,7 @@
-let db = require("../database");
-let User = require("../Admin/user");
-let Admin = require("../Admin/admin");
-let autoincrement = require("../autoincrement");
+const db = require("../database");
+const autoincrement = require("../autoincrement");
+const User = require("../Admin/user");
+const Admin = require("../Admin/admin");
 
 let newAdmin = new Admin("mike", "123", "admin");
 
