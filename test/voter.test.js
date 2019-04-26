@@ -1,6 +1,5 @@
-let db = require("../database");
-let Admin = require("../Admin/admin");
-let Voter = require("../Voter/voter");
+const Admin = require("../Admin/admin");
+const Voter = require("../Voter/voter");
 
 let newVoter = new Voter("tega", "123", "voter");
 let newAdmin = new Admin("mike", "123", "admin");

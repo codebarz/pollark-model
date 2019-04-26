@@ -1,6 +1,3 @@
-const db = require("../database");
-const autoincrement = require("../autoincrement");
-const User = require("../Admin/user");
 const Admin = require("../Admin/admin");
 
 let newAdmin = new Admin("mike", "123", "admin");
