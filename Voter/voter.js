@@ -11,10 +11,10 @@ Voter.prototype = Object.create(User.prototype);
 Voter.prototype.constructor = Voter;
 
 Voter.prototype.vote = function(eventName, contestant, voteAmount) {
-    let contestantsName = db.Events.filter(value => value.name === eventName);
-    let conIndex = contestantsName[0].contestants.indexOf(contestant);
-    contestantsName[0].currentVotes[conIndex] = contestantsName[0].currentVotes[conIndex] + voteAmount;
-    return contestantsName;
+    let theEvent = db.Events.filter(value => value.name === eventName);
+    let conIndex = theEvent[0].contestants.indexOf(contestant);
+    theEvent[0].currentVotes[conIndex] = theEvent[0].currentVotes[conIndex] + voteAmount;
+    return theEvent;
 };
 
 let newAdmin = new Admin("tega", "123", "admin");
