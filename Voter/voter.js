@@ -17,13 +17,4 @@ Voter.prototype.vote = function(eventName, contestant, voteAmount) {
     return theEvent;
 };
 
-let newAdmin = new Admin("tega", "123", "admin");
-console.log(newAdmin.createEvent("Fashion", "tolu", "mike"));
-
-let newVoter = new Voter("mike", "123", "voter");
-let voter2 = new Voter("tolu", "1", "voter");
-newVoter.vote("Fashion", "mike", 10);
-
-console.log(voter2.vote("Fashion", "tolu", 20));
-
 module.exports = Voter;
