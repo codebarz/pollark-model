@@ -17,4 +17,14 @@ Voter.prototype.vote = function(eventName, contestant, voteAmount) {
     return theEvent;
 };
 
+
+let newAdmin = new Admin("tega", "123", "admin");
+let newVoter = new Voter("mike", "123", "voter");
+newAdmin.createEvent("Fashion", "tolu", "mike");
+newAdmin.createEvent("Food", "tosin", "philip");
+newVoter.vote("Fashion", "mike", 10);
+newVoter.vote("Fashion", "tolu", 20);
+newVoter.vote("Food", "tosin", 100);
+newAdmin.viewResults('Food');
+
 module.exports = Voter;

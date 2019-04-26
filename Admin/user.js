@@ -22,5 +22,13 @@ User.prototype.createAccount = function(id) {
 User.prototype.searchEvent = function(event) {
     return db.Events.filter(value => value.name === event);
 };
+User.prototype.viewResults = function(eventName) {
+    let theEvent = User.prototype.searchEvent(eventName);
+    let contestants = theEvent[0].contestants, votes = theEvent[0].currentVotes;
+    contestants.forEach((name, vote) => {
+        console.log(`${name} : ${votes[vote]}`);
+    });
+    return "Hooray! Here are the final results";
+};
 
 module.exports = User;
