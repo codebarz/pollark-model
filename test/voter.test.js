@@ -18,4 +18,8 @@ describe("Voter Functionality", () => {
         expect(newVoter.searchEvent('Food'))
             .toEqual([ { id: 2, name: 'Food', contestants: [ 'tolu', 'mike' ], currentVotes: [ 0, 0 ] } ])
     });
+    test("Should check if a voter can view results", () => {
+        expect(newVoter.viewResults("Fashion"))
+            .toBe("Hooray! Here are the final results");
+    });
 });
