@@ -15,5 +15,10 @@ Voter.prototype.vote = function(eventName, contestant, voteAmount) {
     theEvent[0].currentVotes[conIndex] = theEvent[0].currentVotes[conIndex] + voteAmount;
     return theEvent;
 };
+Voter.prototype.viewResults = function(eventName) {
+    let theEvent = User.prototype.searchEvent(eventName);
+    return `Thanks for voting. Here are the results for ${eventName} \n
+    ${User.prototype.viewResults(eventName)}`;
+};
 
 module.exports = Voter;
