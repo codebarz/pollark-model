@@ -15,5 +15,5 @@ newVoter.vote("Fashion", "jane", 30);
 anotherVoter.vote("Food", "tuna", 50);
 anotherVoter.vote("Fashion", "jane", 60);
 
-newVoter.viewResults("Fashion");
-newAdmin.viewResults("Food");
+console.log(newVoter.viewResults("Fashion"));
+console.log(newAdmin.viewResults("Food"));
