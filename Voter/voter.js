@@ -16,8 +16,7 @@ Voter.prototype.vote = function(eventName, contestant, voteAmount) {
     return theEvent;
 };
 Voter.prototype.viewResults = function(eventName) {
-    let theEvent = User.prototype.searchEvent(eventName);
-    return `Thanks for voting. Here are the results for ${eventName} \n
+    return `${eventName} thanks you for voting
     ${User.prototype.viewResults(eventName)}`;
 };
 

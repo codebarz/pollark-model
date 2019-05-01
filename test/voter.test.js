@@ -20,6 +20,7 @@ describe("Voter Functionality", () => {
     });
     test("Should check if a voter can view results", () => {
         expect(newVoter.viewResults("Fashion"))
-            .toBe("Hooray! Here are the final results");
+            .toBe("Fashion thanks you for voting\n" +
+                "    Hooray! Here are the final results");
     });
 });
